@@ -37,6 +37,14 @@ where
     fn get_row_mut(&mut self, row_idx: usize) -> &mut [<Self as Matrix>::MatElement] {
         self.as_mut()[row_idx].as_mut()
     }
+    //split the matrix into two parts as mutable reference
+    //to meet Janmajaya's goal
+    fn split_at_mut(
+        &mut self,
+        row_idx: usize,
+    ) -> (&mut [<Self as Matrix>::R], &mut [<Self as Matrix>::R]) {
+        self.split_at_mut(row_idx)
+    }
 
     #[inline]
     fn set(&mut self, row_idx: usize, column_idx: usize, val: <Self as Matrix>::MatElement) {

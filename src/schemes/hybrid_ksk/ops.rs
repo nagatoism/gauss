@@ -171,6 +171,7 @@ pub fn generate_key<
         {
             // TODO(Jay): I really wish there was a way to pass submatrix as matrix because
             // that will allow us to use forward_lazy directly.
+
             izip!(
                 q_nttops.iter(),
                 c0_k.iter_rows_mut().take(q_size),
